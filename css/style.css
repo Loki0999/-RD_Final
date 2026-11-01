@@ -1,0 +1,101 @@
+body {
+    background-color: #dedede;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+p {
+   font-size: 25px;
+   text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+figure {
+    margin: 0;
+    border: 2px solid #ccc;
+    padding: 15px;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+@media all and (min-width: 772px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    figure img {
+        border-radius: 50%;
+    }
+
+    figure:last-child {
+        grid-column: span 2;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    figure:last-child {
+        grid-column: auto;
+    }
+
+    figure:nth-child(3n) {
+        grid-column: span 2;
+    }
+
+    figure img {
+        border-radius: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+    
+    *, ::before, ::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+    }
+
+    h1, p, a {
+        color: #ffffff;
+    }
+
+    figure {
+        background-color: #222222;
+        color: #ffeb3b;
+        border-color: #000000;
+    }
+}
